@@ -13,7 +13,13 @@ namespace RestaurantServiceProject.Data
         private string FileName { get; set; }
         public Drinks()
         {
-            //implementuot nuskaityma
+            DrinksList = new List<MenuItem>();
+            string[] lines = File.ReadAllLines("txt_files/drinks.txt");
+            foreach (string line in lines)
+            {
+                string[] data = line.Split("|");
+                DrinksList.Add(new MenuItem(int.Parse(data[0]), data[1], data[2], decimal.Parse(data[3])));
+            }
         }
     }
 }

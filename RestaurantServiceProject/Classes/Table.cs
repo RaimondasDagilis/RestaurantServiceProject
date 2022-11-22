@@ -11,9 +11,9 @@ namespace RestaurantServiceProject.Classes
         public int Id { get; set; }
         public bool IsFree { get; set; }
         public int Seats { get; set; }
-        public Table(int seats)
+        public Table(int id, int seats)
         {
-            Id = 0; //Implementuot id
+            Id = id; //Implementuot id
             Seats = seats;
             IsFree = true;
         }
